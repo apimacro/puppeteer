@@ -1,0 +1,13 @@
+COMMAND,VALUE
+name, premium
+target, home
+goto, https://premium.pl/auth/login.html
+click, input.mid.button-green-large
+wait, 3000
+focus, input.text.login
+write_from_file, .user
+focus, input.text.password
+write_from_file, .pass
+wait, 3000
+click, input.mid.button-green-large
+screenshot, screen.png
