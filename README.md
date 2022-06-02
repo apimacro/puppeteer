@@ -16,6 +16,10 @@ npm install
 ### start
 
 ```bash
+./start.sh
+```
+
+```bash
 node client.js "premium.pl/homepage_screenshot.csv"
 ```
 
