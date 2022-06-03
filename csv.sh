@@ -4,7 +4,7 @@
 ## Created Date: 02.05.2022
 
 ## EXAMPLE
-# ./csv.sh "login_user_screenshot.csv"
+# ./csv.sh "premium.pl/login_user_screenshot.csv"
 # echo "login_user_screenshot.csv" | ./csv.sh
 
 # CONFIG
@@ -14,4 +14,4 @@ PATH_TO_CSV_FILE=
 [ -z "$PATH_TO_CSV_FILE" ] && echo "PATH_TO_CSV_FILE is empty" && exit
 
 # START
-node ./csv.js $PATH_TO_CSV_FILE
+node ./puppeteer/csv.js $PATH_TO_CSV_FILE
