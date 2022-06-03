@@ -27,4 +27,20 @@ node client.js "login_user_screenshot.csv"
 ![img](screen_login_user.png)
 
 
+# APIDSL
 
+
+```js
+./apidsl puppeter.csv("login_user_screenshot.csv")
+```
+
+
+
+
+portal("websitemap.json","credentials.json").target_user("softreck","home").screen("home.png")
+
+multisitemap.schema_data("premium.map.json","premium.user.json", "download_invoices.js").
+
+node login.commands.js "login.commands.js" "premium.commands.csv"
+node login.commands.js "premium.commands.csv"
+multisitemap.steps("login.commands.js","premium.commands.csv").
