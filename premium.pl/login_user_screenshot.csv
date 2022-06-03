@@ -1,3 +1,9 @@
 COMMAND,VALUE
-goto_wait,https://premium.pl/auth/login.html
+goto,https://premium.pl/auth/login.html
+focus,input.text.login
+write_from_file,premium.pl/.user
+focus,input.text.password
+write_from_file,premium.pl/.pass
+click,input.mid.button-green-large
+wait_browser,0
 screenshot,screen_login_user.png

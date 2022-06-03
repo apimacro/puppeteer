@@ -1,7 +1,5 @@
 COMMAND,VALUE
 goto, https://premium.pl/auth/login.html
-click, input.mid.button-green-large
-wait, 3000
 focus, input.text.login
 write_from_file, premium.pl/.user
 focus, input.text.password
