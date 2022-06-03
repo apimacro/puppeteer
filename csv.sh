@@ -11,7 +11,7 @@
 PATH_TO_CSV_FILE=
 [ ! -t 0 ] && IFS='' read -d '' -r PATH_TO_CSV_FILE
 [ ! -z "$1" ] && PATH_TO_CSV_FILE=$1
-[ ! -f "$PATH_TO_CSV_FILE" ] && echo "$PATH_TO_CSV_FILE not exist" && pwd && exit
+[ ! -r "$PATH_TO_CSV_FILE" ] && echo "$PATH_TO_CSV_FILE not exist" && pwd && exit
 [ -z "$PATH_TO_CSV_FILE" ] && echo "PATH_TO_CSV_FILE is empty" && exit
 
 # START
