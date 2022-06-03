@@ -14,6 +14,5 @@ PATH_TO_CSV_FILE=
 [ -z "$PATH_TO_CSV_FILE" ] && echo "PATH_TO_CSV_FILE is empty" && exit
 ABS_PATH_TO_CSV_FILE="$(pwd)/$PATH_TO_CSV_FILE"
 [ ! -r "$ABS_PATH_TO_CSV_FILE" ] && echo "$ABS_PATH_TO_CSV_FILE not exist" && exit
-
 # START
 node ./puppeteer/csv.js $PATH_TO_CSV_FILE
