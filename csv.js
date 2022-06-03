@@ -18,6 +18,10 @@ const myArgs = process.argv.slice(2);
         console.log(filepath_csv);
         try {
             // read contents of the file
+            if (!fs.existsSync(filepath_csv)) {
+                console.log("NOT EXIST");
+                continue;
+            }
             let data = fs.readFileSync(filepath_csv, 'UTF-8');
             let command_obj = await csvToObj(data);
             //console.log(command_obj);
