@@ -4,13 +4,13 @@ const pageCmd = require('./pageCmd.js');
 
 //console.log(process.argv);
 const myArgs = process.argv.slice(2);
-console.log('myArgs: ', myArgs);
+//console.log('myArgs: ', myArgs);
 
 // START
 (async () => {
 
     for (const url of myArgs) {
-        console.log(url);
+        //console.log(url);
 
         try {
             let command_obj = [
