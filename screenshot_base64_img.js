@@ -21,5 +21,15 @@ let command_obj = [
     {cmd: 'screenshot_base64', val: url}
 ];
 
-pageCmd(command_obj);
+// START
+(async () => {
+
+    try {
+        //console.log(command_obj);
+        await pageCmd(command_obj);
+    } catch (err) {
+        console.error(err);
+        process.exit(1);
+    }
+})();
 //process.exit();
