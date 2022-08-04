@@ -43,7 +43,7 @@ module.exports = async function pageCmd(commands) {
                 //let base64Encode = `data:image/png;base64,${data}`;
                 console.log('<p>' + val + '</p>' + '<img src="data:image/png;base64,' + data + '" alt="' + val + '"/> ');
                 //console.log('<p>' + val + '</p>');
-
+                process.exit();
                 //return base64Encode;
             });
         }

@@ -16,22 +16,9 @@ if(undefined === filename || filename.length < 1 ) {
 }
 
 // START
-(async () => {
-    try {
-        let command_obj = [
-            {cmd: 'goto', val: url},
-            {cmd: 'screenshot_base64', val: url}
-        ];
-        //console.log(command_obj);
-        //  let base64Encode = `data:image/png;base64,${data}`;
-        //console.log('<p>' + url + '</p>');
-        //console.log('<p>' + url + '</p>' + '<img src="data:image/png;base64,' + await pageCmd(command_obj) + '" alt="' + url + '"/> ');
-        //console.log( await pageCmd(command_obj));
-        await pageCmd(command_obj);
-        //print(pageCmd.sc)
-        process.exit(1);
-    } catch (err) {
-        console.error(err);
-        process.exit(1);
-    }
-})();
+let command_obj = [
+    {cmd: 'goto', val: url},
+    {cmd: 'screenshot_base64', val: url}
+];
+
+pageCmd(command_obj);
