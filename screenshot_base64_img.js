@@ -23,7 +23,8 @@ if(undefined === filename || filename.length < 1 ) {
             {cmd: 'screenshot_base64'}
         ];
         //console.log(command_obj);
-        console.log('<img src="' + await pageCmd(command_obj) + '" alt="' + url + '"> ');
+        //  let base64Encode = `data:image/png;base64,${data}`;
+        console.log('<img src="data:image/png;base64,' + await pageCmd(command_obj) + '" alt="' + url + '"> ');
         //print(pageCmd.sc)
     } catch (err) {
         console.error(err);
