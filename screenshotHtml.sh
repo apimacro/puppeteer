@@ -15,4 +15,5 @@ URL=
 #[ ! -r "$ABS_URL" ] && echo "$ABS_URL not exist" && exit
 # START
 # node screenshot_base64_img.js "http://softreck.pl"
+# node screenshot_base64_img.js "http://4gtutorial.com"
 node ./puppeteer/screenshot_base64_img.js $URL

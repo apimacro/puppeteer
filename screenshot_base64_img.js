@@ -29,9 +29,9 @@ if(undefined === filename || filename.length < 1 ) {
         //console.log( await pageCmd(command_obj));
         await pageCmd(command_obj);
         //print(pageCmd.sc)
+        process.exit(1);
     } catch (err) {
         console.error(err);
         process.exit(1);
     }
-    process.exit(1);
 })();
