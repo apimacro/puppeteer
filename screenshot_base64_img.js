@@ -24,6 +24,7 @@ if(undefined === filename || filename.length < 1 ) {
         ];
         //console.log(command_obj);
         //  let base64Encode = `data:image/png;base64,${data}`;
+        console.log('<p>' + url + '</p>');
         console.log('<img src="data:image/png;base64,' + await pageCmd(command_obj) + '" alt="' + url + '"> ');
         //print(pageCmd.sc)
     } catch (err) {
