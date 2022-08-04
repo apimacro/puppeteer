@@ -35,11 +35,12 @@ module.exports = async function pageCmd(commands) {
         }
         if (cmd == "screenshot_base64") {
             //const base64 = await page.screenshot({ encoding: "base64" })
+            return await page.screenshot({ encoding: "base64" })
 
-            return screenshot_base64 = await page.screenshot({ encoding: "base64" }).then(function(data){
-                let base64Encode = `data:image/png;base64,${data}`;
-                return base64Encode;
-            });
+            //return screenshot_base64 = await page.screenshot({ encoding: "base64" }).then(function(data){
+              //  let base64Encode = `data:image/png;base64,${data}`;
+              //  return base64Encode;
+            //});
         }
         if (cmd == "wait") {
             await page.waitForTimeout(val);

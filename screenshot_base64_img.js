@@ -29,4 +29,5 @@ if(undefined === filename || filename.length < 1 ) {
         console.error(err);
         process.exit(1);
     }
+    process.exit(1);
 })();
