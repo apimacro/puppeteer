@@ -11,11 +11,8 @@
 URL=
 [ ! -t 0 ] && IFS='' read -d '' -r URL
 [ ! -z "$1" ] && URL=$1
-[ ! -z "$2" ] && FILE=$2
 [ -z "$URL" ] && echo "url is empty" && exit
-#ABS_URL="$(pwd)/$URL"
 #[ ! -r "$ABS_URL" ] && echo "$ABS_URL not exist" && exit
 # START
 # node screenshot.js "http://softreck.pl" "softreck.png"
-# node screenshot_pdf.js "http://softreck.pl" "softreck.pdf"
-node ./puppeteer/screenshot.js $URL $FILE
+node ./puppeteer/screenshot_base64.js $URL

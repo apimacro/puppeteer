@@ -18,4 +18,4 @@ URL=
 # START
 # node screenshot.js "http://softreck.pl" "softreck.png"
 # node screenshot_pdf.js "http://softreck.pl" "softreck.pdf"
-node ./puppeteer/screenshot.js $URL $FILE
+node ./puppeteer/screenshot_pdf.js $URL $FILE

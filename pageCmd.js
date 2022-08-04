@@ -2,6 +2,7 @@ const puppeteer = require("puppeteer-extra");
 const fs = require('fs');
 
 module.exports = async function pageCmd(commands) {
+    let screenshot_base64;
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
@@ -27,6 +28,16 @@ module.exports = async function pageCmd(commands) {
         }
         if (cmd == "screenshot") {
             await page.screenshot({path: val});
+        }
+        if (cmd == "screenshot_pdf") {
+            //createPDFStream
+            await page.pdf({path: val});
+        }
+        if (cmd == "screenshot_base64") {
+            return screenshot_base64 = await page.screenshot({ encoding: "base64" }).then(function(data){
+                let base64Encode = `data:image/png;base64,${data}`;
+                return base64Encode;
+            });
         }
         if (cmd == "wait") {
             await page.waitForTimeout(val);
