@@ -5,24 +5,28 @@ const pageCmd = require('./pageCmd.js');
 //console.log(process.argv);
 const myArgs = process.argv.slice(2);
 //console.log('myArgs: ', myArgs);
+const url = myArgs[0];
+//console.log(url);
+if(undefined === url || url.length < 1 ) {
+    throw new Error("Url is empty");
+}
+let filename = myArgs[1];
+if(undefined === filename || filename.length < 1 ) {
+    filename = url.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.png';
+}
 
 // START
 (async () => {
 
-    for (const url of myArgs) {
-        //console.log(url);
-
-        try {
-            let command_obj = [
-                { cmd: 'goto', val: url },
-                { cmd: 'screenshot', val: url.toLowerCase().replace(/[^a-z0-9]+/g,'-') + '.png' }
-            ];
-            //console.log(command_obj);
-            await pageCmd(command_obj);
-        } catch (err) {
-            console.error(err);
-            process.exit(1);
-        }
+    try {
+        let command_obj = [
+            {cmd: 'goto', val: url},
+            {cmd: 'screenshot', val: filename}
+        ];
+        //console.log(command_obj);
+        await pageCmd(command_obj);
+    } catch (err) {
+        console.error(err);
+        process.exit(1);
     }
-
 })();
