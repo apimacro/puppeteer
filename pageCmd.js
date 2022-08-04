@@ -37,13 +37,14 @@ module.exports = async function pageCmd(commands) {
         if (cmd === "screenshot_base64") {
             //const base64 = await page.screenshot({ encoding: "base64" })
             //return await page.screenshot({ encoding: "base64" });
-            console.log('<img src="data:image/png;base64,' + await page.screenshot({ encoding: "base64" }) + '" alt="' + val + '"/> ');
+            //console.log('<img src="data:image/png;base64,' + await page.screenshot({ encoding: "base64" }) + '" alt="' + val + '"/> ');
 
 
-            //return screenshot_base64 = await page.screenshot({ encoding: "base64" }).then(function(data){
-              //  let base64Encode = `data:image/png;base64,${data}`;
-              //  return base64Encode;
-            //});
+            return screenshot_base64 = await page.screenshot({ encoding: "base64" }).then(function(data){
+                let base64Encode = `data:image/png;base64,${data}`;
+                console.log('<img src="data:image/png;base64,' + data + '" alt="' + val + '"/> ');
+                //return base64Encode;
+            });
         }
         if (cmd === "wait") {
             await page.waitForTimeout(val);
