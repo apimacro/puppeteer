@@ -44,6 +44,8 @@ module.exports = async function pageCmd(commands) {
                 //console.log('<p>' + val + '</p>' + '<img src="' + base64Encode + '" alt="' + val + '"/> ');
                 //console.log('<p>' + val + '</p>');
                 //process.exit();
+                browser.close();
+
                 return base64Encode;
             });
         }

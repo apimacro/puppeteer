@@ -27,7 +27,7 @@ let base64Encode = "";
         //console.log(command_obj);
         let base64Encode = await pageCmd(command_obj);
         console.log('<p>' + url + '</p>' + '<img src="' + base64Encode + '" alt="' + url + '"/> ');
-        process.exit();
+        //process.exit();
 
     } catch (err) {
         console.error(err);
