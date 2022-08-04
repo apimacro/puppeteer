@@ -16,7 +16,6 @@ module.exports = async function pageCmd(commands) {
         // RUN
         if (cmd === "goto") {
             await page.goto(val);
-            console.log('<p>' + val + '</p>');
         }
         if (cmd === "goto_wait") {
             await page.goto(val, {waitUntil: 'domcontentloaded'});
@@ -41,8 +40,10 @@ module.exports = async function pageCmd(commands) {
 
 
             return screenshot_base64 = await page.screenshot({ encoding: "base64" }).then(function(data){
-                let base64Encode = `data:image/png;base64,${data}`;
-                console.log('<img src="data:image/png;base64,' + data + '" alt="' + val + '"/> ');
+                //let base64Encode = `data:image/png;base64,${data}`;
+                console.log('<p>' + val + '</p>' + '<img src="data:image/png;base64,' + data + '" alt="' + val + '"/> ');
+                //console.log('<p>' + val + '</p>');
+
                 //return base64Encode;
             });
         }
