@@ -40,11 +40,11 @@ module.exports = async function pageCmd(commands) {
 
 
             return screenshot_base64 = await page.screenshot({ encoding: "base64" }).then(function(data){
-                //let base64Encode = `data:image/png;base64,${data}`;
-                console.log('<p>' + val + '</p>' + '<img src="data:image/png;base64,' + data + '" alt="' + val + '"/> ');
+                let base64Encode = `data:image/png;base64,${data}`;
+                console.log('<p>' + val + '</p>' + '<img src="' + base64Encode + '" alt="' + val + '"/> ');
                 //console.log('<p>' + val + '</p>');
                 process.exit();
-                //return base64Encode;
+                return base64Encode;
             });
         }
         if (cmd === "wait") {

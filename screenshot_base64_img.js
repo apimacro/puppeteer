@@ -22,3 +22,4 @@ let command_obj = [
 ];
 
 pageCmd(command_obj);
+//process.exit();
