@@ -20,7 +20,8 @@ module.exports = async function pageCmd(commands) {
             //await page.setRequestInterception(true);
             response = await page.goto(val);
             const chain = response.request().redirectChain();
-            console.log(chain.length); // 0
+            //console.log(chain.length); // 0
+            console.log("<p>" + chain.length + "<p>"); // 0
         }
         if (cmd === "goto_wait") {
             response = await page.goto(val, {waitUntil: 'domcontentloaded'});
