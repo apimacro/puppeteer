@@ -8,6 +8,8 @@ module.exports = async function pageCmd(commands) {
 
     page.setViewport({width: 1366, height: 768});
     //await page.goto(url);
+    let response;
+
     for (const command of commands) {
         let cmd = command.cmd;
         let val = command.val;
@@ -15,10 +17,13 @@ module.exports = async function pageCmd(commands) {
 
         // RUN
         if (cmd === "goto") {
-            await page.goto(val);
+            //await page.setRequestInterception(true);
+            response = await page.goto(val);
+            const chain = response.request().redirectChain();
+            console.log(chain.length); // 0
         }
         if (cmd === "goto_wait") {
-            await page.goto(val, {waitUntil: 'domcontentloaded'});
+            response = await page.goto(val, {waitUntil: 'domcontentloaded'});
         }
         if (cmd === "click") {
             await page.click(val);
@@ -39,7 +44,8 @@ module.exports = async function pageCmd(commands) {
             //console.log('<img src="data:image/png;base64,' + await page.screenshot({ encoding: "base64" }) + '" alt="' + val + '"/> ');
 
 
-            return screenshot_base64 = await page.screenshot({ encoding: "base64" }).then(function(data){
+
+            return await page.screenshot({ encoding: "base64" }).then(function(data){
                 let base64Encode = `data:image/png;base64,${data}`;
                 //console.log('<p>' + val + '</p>' + '<img src="' + base64Encode + '" alt="' + val + '"/> ');
                 //console.log('<p>' + val + '</p>');
